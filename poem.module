@@ -57,6 +57,7 @@ function poem_theme() {
   return array(
     'poem_prose' => array(
       'variables' => array('roses' => NULL, 'violets' => NULL, ),
+      'template' => 'poem-prose'
     )
   );
 }
@@ -91,18 +92,4 @@ function poem_form_submit($form, &$form_state) {
   $text = theme('poem_prose', array('roses' => $roses, 'violets' => $violets));
 
   drupal_set_message($text);
-}
-
-function theme_poem_prose($variables) {
-  $roses = $variables['roses'];
-  $violets = $variables['violets'];
-
-  $text = '';
-  $text .= '<h1>"' . t("Rose are $roses") . '"</h1>';
-  $text .= '<p>&nbsp;&nbsp;&nbsp;&nbsp;' . t("Rose are $roses") . '</p>';
-  $text .= '<p>&nbsp;&nbsp;&nbsp;&nbsp;' . t("Violets are $violets") . '</p>';
-  $text .= '<p>&nbsp;&nbsp;&nbsp;&nbsp;' . t("Nobody loves Form API") . '</p>';
-  $text .= '<p>&nbsp;&nbsp;&nbsp;&nbsp;' . "More than I do" . '</p>';
-
-  return $text;
 }
