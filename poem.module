@@ -11,8 +11,7 @@ function poem_menu() {
 
   $items['poem'] = array(
     'title' => 'Poem',
-    'page callback' => 'drupal_get_form',
-    'page arguments' => array('poem_form'),
+    'page callback' => 'poem_page',
     'access callback' => TRUE,
   );
 
@@ -54,6 +53,21 @@ function poem_form($form, &$form_state) {
   return $form;
 }
 
+function poem_theme() {
+  return array(
+    'poem_prose' => array(
+      'variables' => array('roses' => NULL, 'violets' => NULL, ),
+      'template' => 'poem-prose'
+    )
+  );
+}
+
+function poem_page () {
+  $form = drupal_get_form("poem_form");
+  return $form;
+}
+
+
 /**
  * Validation handler for poem_form form.
  */
@@ -75,12 +89,7 @@ function poem_form_submit($form, &$form_state) {
   $violets = $values['violets'];
   variable_set('poem_violets', $violets);
 
-  $text = '';
-  $text .= '<h1>"' . t("Rose are $roses") . '"</h1>';
-  $text .= '<p>&nbsp;&nbsp;&nbsp;&nbsp;' . t("Rose are $roses") . '</p>';
-  $text .= '<p>&nbsp;&nbsp;&nbsp;&nbsp;' . t("Violets are $violets") . '</p>';
-  $text .= '<p>&nbsp;&nbsp;&nbsp;&nbsp;' . t("Nobody loves Form API") . '</p>';
-  $text .= '<p>&nbsp;&nbsp;&nbsp;&nbsp;' . "More than I do" . '</p>';
+  $text = theme('poem_prose', array('roses' => $roses, 'violets' => $violets));
 
   drupal_set_message($text);
 }
