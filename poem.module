@@ -53,6 +53,9 @@ function poem_form($form, &$form_state) {
   return $form;
 }
 
+/**
+ * Implements hook_theme().
+ */
 function poem_theme() {
   return array(
     'poem_prose' => array(
