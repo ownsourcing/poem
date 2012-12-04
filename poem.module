@@ -60,7 +60,7 @@ function poem_theme() {
   return array(
     'poem_prose' => array(
       'variables' => array('roses' => NULL, 'violets' => NULL, ),
-      'template' => 'poem-prose'
+      'template' => 'poem-prose',
     )
   );
 }
