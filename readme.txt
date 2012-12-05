@@ -50,24 +50,8 @@ Add additional details to instructions
 3) Add the poem module to the /modules directory
 
 Update instructions regarding translation once approach has been finalized by Twig team. 
-Latest discussion 2012-12-04
-10:26:01 AM JohnAlbin: kay_v: Check the footer section of http://drupalcode.org/sandbox/pixelmord/1750250.git/blob/refs/heads/front-end:/core/themes/stark/templates/comment/comment.html.twig
-10:26:12 AM kay_v: JohnAlbin: will do
-10:26:31 AM kay_v: much appreciated! (been scratching my scalp to the point of lacerations ...)
-10:28:23 AM Fabianx: kay_v: Can also use:
-10:28:48 AM Fabianx: {{ 'My string: @var' | t({'@var': var})
-10:28:55 AM Fabianx: for more complicated cases.
-mikestewart [~mikestewa@pool-108-13-149-180.lsanca.fios.verizon.net] entered the room. (10:29:13 AM)
-10:29:25 AM Fabianx: kay_v: Twig also has native i18n support as a "real" filter, but we are not supporting that right now.
-10:29:55 AM kay_v: thanks Fabianx - will post a link to Ladder writeup here. It would be great to have someone give it a glance to confirm I've not made a mess of it 
-10:31:12 AM GaborHojtsy: JohnAlbin: Fabianx: is it safe to say anything before a "| t(…." is a translatable string?
-10:31:28 AM Fabianx: GaborHojtsy: yes
-10:31:30 AM GaborHojtsy: JohnAlbin: Fabianx: do you support format_plural() and/or context in any way?
-10:31:41 AM Fabianx: GaborHojtsy: 'x' | t(...) is translated to:
-10:31:49 AM Fabianx: t('x', ...)
-10:31:54 AM Fabianx: ( internally )
-10:31:58 AM Fabianx: GaborHojtsy: not yet.
-10:32:04 AM Fabianx: GaborHojtsy: I could expose that function though.
-10:32:41 AM JohnAlbin: GaborHojtsy: I'm not sure that format_plural() is used in  any D7 .tpl.php templates. (Doesn't mean we shouldn't support it in twig.)
-10:33:19 AM Fabianx: We might think to switch to: http://twig.sensiolabs.org/doc/extensions/i18n.html though, but I don't know how that would be compatible with translate.drupal.org.
-
+Latest discussion 2012-12-04 on irc #drupal-twig
+ - recommended example of current implementation in the footer section of http://drupalcode.org/sandbox/pixelmord/1750250.git/blob/refs/heads/front-end:/core/themes/stark/templates/comment/comment.html.twig
+ - for more complicated cases, use {{ 'My string: @var' | t({'@var': var})
+ - explanation: anything before a "| t(…." is a translatable string; 'x' | t(...) is translated to t('x', ...) ( internally )
+ 
