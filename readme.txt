@@ -1,8 +1,10 @@
 ------------
  Overview
 ------------
+
+Example of variables in Twig
  
-This example module was written by Bryan Hirsch to serve as an introductory-level exercise in using the Twig theme engine. (Twig is the new default theme engine in Drupal 8 core.) Use the code in this module to learn to develop a .twig file to replace an existing .tpl.php file (.tpl.php is the file format for PHPTemplate, the default theme engine of Drupal core since 4.7).
+This example module was written by Bryan Hirsch to serve as an introductory-level exercise in including variables recognized by the Twig theme engine. (Twig is the new default theme engine in Drupal 8 core.) Use the code in this module to learn to develop a .twig file that relies on variables to replace an existing .tpl.php file (.tpl.php is the file format for PHPTemplate, the default theme engine of Drupal core since 4.7).
 
 This example and related exercises will be added to drupalladder.org; check there for the latest versions.
 
