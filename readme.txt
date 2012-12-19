@@ -51,7 +51,7 @@ Add additional details to instructions
   b - Using the following command: git clone git://github.com/ownsourcing/poem.git
 3) Add the poem module to the /modules directory
 
-Update instructions regarding translation once approach has been finalized by Twig team. 
+Update instructions regarding translation once approach has been finalized by Twig team. At the same time, confirm t() will still be used by module developers... (opportunities for consistent use across modules and themes?).
 Latest discussion 2012-12-04 on irc #drupal-twig
  - recommended example of current implementation in the footer section of http://drupalcode.org/sandbox/pixelmord/1750250.git/blob/refs/heads/front-end:/core/themes/stark/templates/comment/comment.html.twig
  - for more complicated cases, use {{ 'My string: @var' | t({'@var': var})
